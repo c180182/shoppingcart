@@ -1,9 +1,18 @@
 <?php
-require_once("funx.php");
-$books = createBooks();
-$dvds = createDvds();
+/*
+if (isset($_POST['submit'])){
+    $radioVal = $_POST["category"];
+    if($radioVal == "book")
+    {
+        
+    }
+    else ($radioVal == "dvd")
+    {
+        
+    }
+}
+*/
 ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -26,7 +35,7 @@ $dvds = createDvds();
 			<h2>商品検索 - カテゴリ選択</h2>
 			<p>商品カテゴリを選択して［検索］ボタンをクリックしてください。</p>
 			<p>カテゴリを選択しなかった場合は、全件検索が実施されすべての商品が表示されます。</p>
-			<form action="result.html" method="get">
+			<form action ="result.php" method="post">
 				<table class="borderless">
 					<tr>
 						<td>
@@ -45,6 +54,7 @@ $dvds = createDvds();
 			</form>
 		</article>
 	</main>
+						
 
 	<footer>
 		<div id="copyright">(C) 2019 The Advanced Course on Web System Development</div>

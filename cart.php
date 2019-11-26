@@ -1,7 +1,6 @@
 <?php
 require_once("funx.php");
 session_start();
-
 /* take a request in session*/
 $cart = null;
 if (isset($_SESSION["cart"])){
@@ -18,48 +17,46 @@ $mode="";
 if(isset($_REQUEST["mode"])){
     $mode=$_REQUEST["mode"];
 }
-
 /* take the selected products*/
-$carts=createCarts();
-$carts=$carts[$id];
+$items=createItems();
+$items=$items[$id];
 /* enlist in cart*/
-$cart[]= $cart;
+$cart[]= $item;
 /* return to session in order to relist the list or products*/
 $_SESSION["cart"]=$cart;
-
 if ($mode=="clear"){
     unset($_SESSION);
     session_destroy();
     $cart=[];
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
-	<title>カート</title>
+	<title>ccmc-04 - ショップシステム</title>
 	<link rel="stylesheet" href="../../assets/css/style.css" />
-	<link rel="stylesheet" href="../../assets/css/shoppingcart.css" />
+	<link rel="stylesheet" href="../../assets/css/ccmc-03.css" />
+	<link rel="stylesheet" href="../../assets/css/ccmc-04.css" />	
 </head>
 
 <body>
-	<h1>カート</h1>
-	<p><a href="result.php">商品一覧に戻る</a><a href="cart.php?mode=clear">カートを空にする</a></p>
+	<h1>ショップシステム</h1>
+	<p><a href="entry.php">買い物を続ける</a>　<a href="cart.php?mode=clear">カートをクリアする</a></p>
 	<table>
 		<tr>
 			<th>書籍名</th>
 			<th>著者</th>
 			<th>価格</th>
-			<th>ISBN コード</th>
+			<th>ISBNコード</th>
 			<th></th>
 		</tr>
 		<?php for($i = 0;$i<count($cart);$i++){?>
 		<tr>
-			<td><?=$cart[$i]->getName()?></td>
-			<td><?=$cart[$i]->getWriter()?></td>
+			<td><?=$cart[$i]->getPname()?></td>
+			<td><?=$cart[$i]->getWname()?></td>
 			<td><?=$cart[$i]->getPrice()?>円</td>
-			<td><?=$cart[$i]->getCode()?></td>
+			<td><?=$cart[$i]->getIsbn()?>円</td>
 		</tr>
 		<?php }?>
 			</table>

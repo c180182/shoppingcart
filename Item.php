@@ -1,78 +1,50 @@
 <?php
-
-class Book {
+/**
+ * 商品クラス
+ */
+class Item {
+	/**
+	 * 属性
+	 * @var string $name  商品名
+	 * @var int    $price 価格
+	 */
 	private $name;
-	private $writer;
 	private $price;
-	private $code;
-
-	function __construct(string $name, string $writer, int $price, string $code) {
-		$this->name = $name;
-		$this->writer = $writer;
+	/**
+	 * コンストラクタ
+	 * @param string $name  商品名
+	 * @param int    $price 価格
+	 */
+	function __construct(string $Pname, int $price,string $Wname, string $isbn) {
+		$this->Pname = $Pname;
 		$this->price = $price;
-		$this->code = $code;
+		$this->Wname = $Wname;
+		$this->isbn=$isbn;
 	}
-
-	function setName(string $name):void {
-		$this->name = $name;
+	/** アクセサメソッド群 */
+	function setPname(string $Pname):void {
+		$this->Pname = $Pname;
 	}
-	function getName():string {
-		return $this->name;
+	function getPname():string {
+		return $this->Pname;
 	}
-
-	function setWrite(string $writer):void {
-		$this->writer = $writer;
+	function setWname(string $Wname):void {
+		$this->Wname = $Wname;
 	}
-	function getWrite():string {
-		return $this->writer;
+	function getWname():string {
+		return $this->Wname;
 	}
-
 	function setPrice(int $price):void {
 		$this->price = $price;
 	}
 	function getPrice():string {
 		return number_format($this->price);
 	}
-	
-	function setCode(string $code):void {
-		$this->code = $code;
+	function setIsbn(string $isbn):void {
+		$this->isbn = $isbn;
 	}
-	function getCode():string {
-		return $this->code;
+	function getIsbn():string {
+		return $this->isbn;
 	}
-}
-
-class Dvd {
-	private $name;
-	private $price;
-	private $time;
-
-	function __construct(string $name, int $price, int $time) {
-		$this->name = $name;
-		$this->price = $price;
-		$this->time = $time;
-	}
-
-	function setName(string $name):void {
-		$this->name = $name;
-	}
-	function getName():string {
-		return $this->name;
-	}
-
-	function setPrice(int $price):void {
-		$this->price = $price;
-	}
-	function getPrice():string {
-		return number_format($this->price);
-	}
-	
-	function setTime(int $time):void {
-		$this->time = $time;
-	}
-	function getTime():string {
-		return number_format($this->time);
-	}
-	
 }
 ?>

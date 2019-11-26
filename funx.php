@@ -3,25 +3,15 @@ require_once "Item.php";
 ?>
 <?php
 /**
- * ¤•i‚Ì”z—ñ‚ð¶¬‚·‚éB
- * @return array ItemƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ð—v‘f‚Æ‚·‚é”z—ñ
+ * å•†å“ã®é…åˆ—ã‚’ç”Ÿæˆã™ã‚‹ã€‚
+ * @return array Itemã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¦ç´ ã¨ã™ã‚‹é…åˆ—
  */
-function createBooks():array {
-	$books = array(
-		new Book("Head First PHP & MySQL", "Lynn Beighley", 4650, "978-4873114446"),
-		new Book("ƒŠ[ƒ^JƒtJƒ‹ƒR[ƒgJ", "Dustin Boswell", 2600, "978-4873115658"), 
-		new Book("Head First ƒeJƒTJƒCƒ“ƒnKƒ^[ƒ“", "Eric Freeman", 5060, "978-4873112497"),
-		new Book("ƒGƒŒƒLƒMƒ^[", "‰º‰ªGK", 2400, "978-4798015163")
-	);
-	return $books;
-}
-
-function createDvds():array {
-	$dvds = array(
-		new Dvd("The Net", 500, 114),
-		new Dvd("Star Wars: Force Awakens", 2800, 150), 
-		new Dvd("Outbreak", 900, 129)
-	);
-	return $dvds;
+function createItems():array {
+	$items = array(
+		new Item("Head First PHP & MySQL",4650,"Lynn Beighley","978-4873114446"),
+		new Item("ãƒªãƒ¼ãƒ€ãƒ–ãƒ«ã‚³ãƒ¼ãƒ‰",2600,"Dustin Boswell","978-4873115658"), 
+		new Item("Head First ãƒ‡ã‚¶ã‚¤ãƒ³ãƒ‘ã‚¿ãƒ¼ãƒ³",5060,"Eric Freeman","978-4873112497"),
+		new Item("PHP ã«ã‚ˆã‚‹ãƒ‡ã‚¶ã‚¤ãƒ³ãƒ‘ã‚¿ãƒ¼ãƒ³å…¥é–€",2400,"ä¸‹å²¡ç§€å¹¸","978-4798015163"));
+	return $items;
 }
 ?>
